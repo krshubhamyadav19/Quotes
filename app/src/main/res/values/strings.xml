@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Final_Kumar_Shubham</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up_with_social">Sign Up with social</string>
+    <string name="sign_in_s">Sign In</string>
+    <string name="create_acount">Create acount</string>
+    <string name="please_create_a_acount_to_continue">Please create a acount to continue</string>
+    <string name="welcome">Welcome</string>
+    <string name="forget_password">Forget password ?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="signin">SignIn</string>
+    <string name="main">TODO</string>
+</resources>

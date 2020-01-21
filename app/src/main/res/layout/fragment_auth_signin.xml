@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        
+        <variable
+            name="authsigninviewmodel"
+            type="com.app.final_kumar_shubham.authentication.signin.AuthSignInViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_black_white"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".authentication.signin.AuthSingIn"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/main"
+            android:src="@drawable/app_logo_ds"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/signin"
+            android:textColor="@color/grey_color"
+            android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/tv_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Join our community dedicated to keepin \n each other safe"
+            android:textColor="@color/grey_color"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_signin" />
+
+        <EditText
+            android:id="@+id/et_email_aut_craete_acount_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/grey_color"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:text="@={authsigninviewmodel.email}"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_join"
+            tools:ignore="RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/et_password_aut_craete_acount_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_key"
+            android:text="@={authsigninviewmodel.password}"
+            android:drawablePadding="10dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/grey_color"
+            android:maxLength="20"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_email_aut_craete_acount_frag"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_forget_Password_aut_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/forget_password"
+            android:textColor="@color/grey_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_password_aut_craete_acount_frag" />
+
+        <Button
+            android:id="@+id/btn_signin_auth_sign_fragment"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/draw_solid_btn_orange"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:onClick="@{()-> authsigninviewmodel.onClickSignIn()}"
+            android:padding="10dp"
+            android:text="@string/sign_in_s"
+            android:textColor="@color/color_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forget_Password_aut_signin" />
+
+        <TextView
+            android:id="@+id/tv_dont_have_acount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="42dp"
+            android:text="Don't have acount ?"
+            android:textColor="@color/grey_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signin_auth_sign_fragment" />
+
+        <TextView
+            android:id="@+id/tv_create_acount_auth_signin_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="42dp"
+            android:onClick="@{()->authsigninviewmodel.onClickCreateAcount()}"
+            android:text="Create acount"
+            android:textColor="@color/color_basic_orange"
+            app:layout_constraintStart_toEndOf="@+id/tv_dont_have_acount"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signin_auth_sign_fragment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>

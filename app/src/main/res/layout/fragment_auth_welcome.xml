@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="authviewModel"
+            type="com.app.final_kumar_shubham.authentication.AutWelcomeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@drawable/gradient_black_white">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_black_white"
+        tools:context=".authentication.AuthWelcome">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/auht_welcome_boy_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_welcome_aut_welcome_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="42sp"
+            android:textColor="@color/grey_color"
+            android:text="@string/welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tv_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/grey_color"
+            android:text="@string/please_create_a_acount_to_continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome_aut_welcome_fragment" />
+
+        <Button
+            android:id="@+id/btn_creat_acount_aut_fragment"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/draw_solid_btn_orange"
+            android:onClick="@{()->authviewModel.onClickCreateAcount()}"
+            android:text="@string/create_acount"
+            android:textColor="@color/color_white"
+            app:layout_constraintBottom_toTopOf="@+id/tv_social"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signin_autWelcome_fragment" />
+
+        <Button
+            android:id="@+id/btn_signin_autWelcome_fragment"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{()-> authviewModel.onClickSignin()}"
+            android:textColor="@color/color_white"
+            android:background="@drawable/draw_solid_btn_grey"
+            android:text="@string/sign_in_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_create" />
+
+
+        <TextView
+            android:id="@+id/tv_social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/sign_up_with_social"
+            android:textColor="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_creat_acount_aut_fragment" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_facebook_circular"
+            app:layout_constraintStart_toStartOf="@+id/tv_social"
+            app:layout_constraintTop_toBottomOf="@+id/tv_social" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_google_circle"
+            app:layout_constraintEnd_toEndOf="@+id/tv_social"
+            app:layout_constraintTop_toBottomOf="@+id/tv_social" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
+

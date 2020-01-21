@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="authcreateacountviewmodel"
+            type="com.app.final_kumar_shubham.authentication.createacount.AuthCreateAcountViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".authentication.signin.AuthSingIn"
+        android:background="@drawable/gradient_black_white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/main"
+            android:src="@drawable/app_logo_ds"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="Create account"
+            android:textColor="@color/grey_color"
+            android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/tv_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Enter your information below or login"
+            android:textColor="@color/grey_color"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_signin" />
+
+        <EditText
+            android:id="@+id/et_name_aut_craete_acount_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/grey_color"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_account_circle_black_24dp"
+            android:drawablePadding="10dp"
+            android:text="@={authcreateacountviewmodel.userName}"
+            android:hint="User name"
+            android:inputType="textPersonName"
+            android:maxLength="25"
+            android:paddingStart="8dp"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_join"
+            tools:ignore="RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/et_email_aut_craete_acount_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:paddingStart="8dp"
+            android:text="@={authcreateacountviewmodel.email}"
+            android:textColor="@color/grey_color"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name_aut_craete_acount_frag"
+            tools:ignore="RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/et_password_aut_craete_acount_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="10dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingStart="8dp"
+            android:text="@={authcreateacountviewmodel.password}"
+            android:textColor="@color/grey_color"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_email_aut_craete_acount_frag"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/et_date_creat_account_frag"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/draw_solid_btn_black"
+            android:drawableStart="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="Date"
+            android:maxLength="20"
+            android:paddingStart="8dp"
+            android:text="@={authcreateacountviewmodel.dob}"
+            android:textColor="@color/grey_color"
+            android:textColorHint="@color/grey_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_password_aut_craete_acount_frag"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_forget_Password_aut_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/forget_password"
+            android:textColor="@color/grey_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_date_creat_account_frag" />
+
+        <Button
+            android:id="@+id/btn_signin_auth_sign_fragment"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/draw_solid_btn_orange"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            android:onClick="@{()->authcreateacountviewmodel.onClickSignup()}"
+            android:padding="10dp"
+            android:text="Sing Up"
+            android:textColor="@color/color_white"
+            app:layout_constraintStart_toStartOf="@+id/tv_forget_Password_aut_signin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forget_Password_aut_signin" />
+
+        <TextView
+            android:id="@+id/tv_dont_have_acount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="118dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="Already have acount ?"
+            android:textColor="@color/grey_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signin_auth_sign_fragment"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_create_acount_auth_signin_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> authcreateacountviewmodel.onClickSignIn()}"
+            android:text="Sign In"
+            android:textColor="@color/color_basic_orange"
+            app:layout_constraintStart_toEndOf="@+id/tv_dont_have_acount"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signin_auth_sign_fragment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</layout>

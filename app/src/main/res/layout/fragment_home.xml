@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeviewmodel"
+            type="com.app.final_kumar_shubham.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".authentication.home.HomeFragment"
+        android:background="@drawable/gradient_black_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/draw_solid_layout_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_logout_home_frag"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:onClick="@{()-> homeviewmodel.onClickSignout()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_exit_to_app_black_24dp" />
+
+            <TextView
+                android:id="@+id/tv_hi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Hello!"
+                android:textColor="@color/color_basic_orange"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_username_home_frag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:hint="User Name"
+                android:text="@={homeviewmodel.userName}"
+                android:textColor="@color/color_basic_orange"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hi" />
+
+            <TextView
+                android:id="@+id/tv_user_age_home_frag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Age"
+                android:text="@={homeviewmodel.userDob}"
+                android:textColor="@color/color_basic_orange"
+                app:layout_constraintStart_toStartOf="@+id/tv_username_home_frag"
+                app:layout_constraintTop_toBottomOf="@+id/tv_username_home_frag" />
+
+            <TextView
+                android:id="@+id/tv_user_email_home_frag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="email"
+                android:text="@={homeviewmodel.userEmail}"
+                android:textColor="@color/color_basic_orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_user_age_home_frag"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_age_home_frag" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+          <ImageView
+            android:id="@+id/iv_add_home_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="22dp"
+            android:onClick="@{()->homeviewmodel.onclickAdd()}"
+            android:src="@drawable/ic_add_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_add_home_frag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
